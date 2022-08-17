@@ -1,0 +1,11 @@
+<launch>
+  <!-- start nodelet manager and driver nodelets -->
+  <include file="$(find velodyne_driver)/launch/nodelet_manager.launch" />
+
+  <!-- start cloud nodelet -->
+  <include file="$(find velodyne_pointcloud)/launch/cloud_nodelet.launch">
+    <arg name="calibration"
+         value="/media/frc-ag-1/Elements/data/ISU/scripts/visualization/VeloView-VLP-32C.yaml"/>
+  </include>
+
+</launch>
