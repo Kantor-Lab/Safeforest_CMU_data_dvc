@@ -6,7 +6,7 @@ This data is managed using the [dvc](https://dvc.org/). Install `dvc` and run `d
 
 # Adding data
 I'd like to follow this naming convention:
-`date/site_<site name>/collect_<number>`
+`site_<site name>/date/collect_<number>`
 
 After placing data in the appropriate location, you can add it with the following commmands. Begin by ensuring that nothing is staged in your git workspace. Then use `dvc add -R <data folders>` to recursively add the files in the folders. The recursive option allows us to download individual files in the future, which is useful given the size of the data. This process will take some time. Once it is complete, run `dvc push` to upload the data to the default remote. In parellel, you can check your git staging area. You should see that `*.dvc` files pointing to the raw data files and `.gitignore` files ignoring the raw data have been automatically staged. Commit these changes and push them to github.
 
