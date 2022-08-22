@@ -1,0 +1,5 @@
+outs:
+- md5: cadcebaae666f4364d76e1f0235c92d4
+  size: 2097556381
+  path: nuc_data_2018-12-31-23-17-35_24.bag
+  isexec: true
