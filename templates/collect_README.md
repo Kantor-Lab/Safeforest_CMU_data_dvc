@@ -13,6 +13,7 @@
 * wind speed:
 
 ### Payload 
+* old payload:
 * focus values:
 * aperture:
 * exposure settings: 
