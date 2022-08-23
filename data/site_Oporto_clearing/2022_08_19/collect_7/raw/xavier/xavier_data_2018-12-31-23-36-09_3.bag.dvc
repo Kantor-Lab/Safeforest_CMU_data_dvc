@@ -1,0 +1,5 @@
+outs:
+- md5: 695e89b1e7e505fad8934064ce08a261
+  size: 2098001887
+  path: xavier_data_2018-12-31-23-36-09_3.bag
+  isexec: true
