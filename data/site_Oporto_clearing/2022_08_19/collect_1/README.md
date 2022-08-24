@@ -1,11 +1,11 @@
 ## General
-* objective: flying at the horseshot location close to Ingeniarius (41.216859, -8.527342)
+* objective: flying at the horseshoe location close to Ingeniarius (41.216859, -8.527342)
 * people present: Winnie Kuang and Babak B. Chehreh
 
 ### Flight 
 * elevation: 5 m - 7 m (under the canopy)
 * manual flight: Yes
-* speed: 1 m/s - 2 m/s
+* speed: 0.8 m/s - 1 m/s
 * capture overlap: -
 
 ### Environmental 
@@ -21,4 +21,4 @@
 * sucessful sensors: Yes
 
 ## Notes
- This collect is in the same area as the under-the-canopy data, but the trajectory may be different from previous collects. 
+ This collect is in the same area as the under-the-canopy data, but the trajectory may be different from previous collects from day 2022_08_17. 

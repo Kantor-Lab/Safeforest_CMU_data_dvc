@@ -1,5 +1,5 @@
 ## General
-* objective: flying at the horseshot location close to Ingeniarius (41.216859, -8.527342)
+* objective: flying at the horseshoe location close to Ingeniarius (41.216859, -8.527342)
 * people present: Winnie Kuang and Babak B. Chehreh
 
 ### Flight 

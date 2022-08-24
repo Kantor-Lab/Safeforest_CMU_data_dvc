@@ -1,9 +1,9 @@
 ## General
-* objective: flying at the horseshot location close to Ingeniarius (41.216859, -8.527342)
+* objective: flying at the horseshoe location close to Ingeniarius (41.216859, -8.527342)
 * people present: Winnie Kuang and Babak B. Chehreh
 
 ### Flight 
-* elevation: 55 m (above the canopy)
+* elevation: 55 m (over the canopy)
 * manual flight: No, used DJI GS Pro
 * speed: 1 m/s - 2 m/s
 * capture overlap: -
