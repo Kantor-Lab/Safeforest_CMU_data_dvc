@@ -1,0 +1,5 @@
+outs:
+- md5: a2eea85550ac86f73aae9087795fd741
+  size: 2098572870
+  path: data_mapping_velodyne_imu_2020-12-03-12-33-14_0.bag
+  isexec: true
