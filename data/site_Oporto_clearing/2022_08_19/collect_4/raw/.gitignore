@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /data_mapping_velodyne_imu_2020-12-03-12-33-14_0.bag
 /data_mapping_velodyne_imu_2020-12-03-12-33-48_1.bag
 /data_mapping_velodyne_imu_2020-12-03-12-34-20_2.bag
@@ -12,3 +13,18 @@
 /data_mapping_velodyne_imu_2020-12-03-12-39-33_11.bag
 /data_mapping_velodyne_imu_2020-12-03-12-40-06_12.bag
 /data_mapping_velodyne_imu_2020-12-03-12-40-39_13.bag
+=======
+/data_mapping_velodyne_imu_2020-12-03-12-39-01_10.bag
+/data_mapping_velodyne_imu_2020-12-03-12-37-52_8.bag
+/data_mapping_velodyne_imu_2020-12-03-12-34-20_2.bag
+/data_mapping_velodyne_imu_2020-12-03-12-40-39_13.bag
+/data_mapping_velodyne_imu_2020-12-03-12-33-14_0.bag
+/data_mapping_velodyne_imu_2020-12-03-12-39-33_11.bag
+/data_mapping_velodyne_imu_2020-12-03-12-37-18_7.bag
+/data_mapping_velodyne_imu_2020-12-03-12-36-06_5.bag
+/data_mapping_velodyne_imu_2020-12-03-12-40-06_12.bag
+/data_mapping_velodyne_imu_2020-12-03-12-35-31_4.bag
+/data_mapping_velodyne_imu_2020-12-03-12-33-48_1.bag
+/data_mapping_velodyne_imu_2020-12-03-12-38-27_9.bag
+/data_mapping_velodyne_imu_2020-12-03-12-36-42_6.bag
+>>>>>>> 3f816d13bf1e9bcc8ceb51d145571d73eb358ca0
