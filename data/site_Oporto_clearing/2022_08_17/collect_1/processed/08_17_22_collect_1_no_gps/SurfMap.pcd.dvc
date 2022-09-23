@@ -1,0 +1,4 @@
+outs:
+- md5: f4e8bbe69366e15f42a6bbc45ec78c31
+  size: 9504880
+  path: SurfMap.pcd

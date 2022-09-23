@@ -1,0 +1,4 @@
+outs:
+- md5: 0e3debdb65fcb3164bce45f27e4f6c00
+  size: 5440
+  path: trajectory.pcd
