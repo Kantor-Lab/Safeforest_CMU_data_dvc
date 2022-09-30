@@ -1,0 +1,5 @@
+outs:
+- md5: 7c2beda9656884f83f2a13871bf1a107
+  size: 11393998868
+  isexec: true
+  path: imu_raw_extended.bag

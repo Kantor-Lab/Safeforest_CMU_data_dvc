@@ -1,0 +1,5 @@
+outs:
+- md5: 9976faafc7042c71e92dbd7229e3d07b
+  size: 26035120905
+  isexec: true
+  path: webcam_imu_enu.bag
