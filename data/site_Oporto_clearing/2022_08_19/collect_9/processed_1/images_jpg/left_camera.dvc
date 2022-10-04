@@ -1,0 +1,5 @@
+outs:
+- md5: be0b359eb5dfcdd62c83f6fdbd6f81c9.dir
+  size: 710920845
+  nfiles: 812
+  path: left_camera
