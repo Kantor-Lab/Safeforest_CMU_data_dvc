@@ -2,7 +2,9 @@
 This data was collected the SafeForest project, in collaboration between CMU and multiple Portuguese consortium members.
 
 # Installation
-This data is managed using the [dvc](https://dvc.org/). Install `dvc` and run `dvc pull`. The first time you do so, it will ask you to give DVC permissions to your Google Drive. Do so using the account I shared the data to. The data is large (~2TB) so if you want to pull a subset of it you can run `dvc pull <dvc filenames>` for the files you want. 
+This project has a scripts submodule, so when you clone you need to do git clone --recursive.
+
+This data is managed using the [dvc](https://dvc.org/). The data is stored in this [google drive folder](https://drive.google.com/drive/folders/1ZoxMD42sFr_EF5Ykfag2DdlOvfz9OT57), which needs to be shared with you. Install `dvc` with the `[gdrive]` dependency and run `dvc pull`. For linux, this might look like `pip install dvc[gdrive]`. The first time you do so, it will ask you to give DVC permissions to your Google Drive. Do so using the account I shared the data to. The data is large (~400GB) so if you want to pull a subset of it you can run `dvc pull <dvc filenames>` for the files you want. 
 
 # Adding data
 I'd like to follow this naming convention:
