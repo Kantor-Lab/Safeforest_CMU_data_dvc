@@ -1,0 +1,5 @@
+outs:
+- md5: 341a4bd783efb679dd5c76204addefb8
+  size: 111112511
+  path: point_cloud.zip
+  isexec: true

@@ -1,0 +1,5 @@
+outs:
+- md5: d32c15b242bfdcc7aaf70c5f7f295aeb
+  size: 38899
+  path: frame.zip
+  isexec: true

@@ -1,0 +1,5 @@
+outs:
+- md5: 302160e45abac3439dfc7c94877a188c
+  size: 17
+  path: lock
+  isexec: true
