@@ -1,0 +1,5 @@
+outs:
+- md5: c2d6c3bf7322758650df2bccbeea1e02
+  size: 1489600
+  path: safeforest_oporto_22_08_17_collect_1_left_image_poses.xml
+  isexec: true
