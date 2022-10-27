@@ -1,0 +1,5 @@
+outs:
+- md5: 8fec258d9cea661add7081353ad5e675
+  size: 70435616227
+  path: 08_17_22_collect_4_merged.bag
+  isexec: true
