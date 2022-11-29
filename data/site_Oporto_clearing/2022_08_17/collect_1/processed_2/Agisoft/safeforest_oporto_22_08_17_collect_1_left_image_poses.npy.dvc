@@ -1,0 +1,5 @@
+outs:
+- md5: a0b3c24f43299c88e08956297ee10895
+  size: 79760
+  path: safeforest_oporto_22_08_17_collect_1_left_image_poses.npy
+  isexec: true
