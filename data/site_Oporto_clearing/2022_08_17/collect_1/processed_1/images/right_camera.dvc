@@ -1,0 +1,5 @@
+outs:
+- md5: 3f7bc68f5e851c189ff2d30b95c632a1.dir
+  size: 17709589361
+  nfiles: 2563
+  path: right_camera
