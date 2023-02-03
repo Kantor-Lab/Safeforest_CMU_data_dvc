@@ -1,6 +1,6 @@
 ## General
-* objective:
-* people present:
+* objective: Collect data for the first pilot of the Safe Forest project. 
+* people present: George Kantor, Babak
 
 ### Flight 
 * elevation:
@@ -21,3 +21,4 @@
 * sucessful sensors:
 
 ## Notes
+This datatset contains data wrt the RTK of the ground robot
