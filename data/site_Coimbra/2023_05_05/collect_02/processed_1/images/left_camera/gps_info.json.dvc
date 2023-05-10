@@ -1,0 +1,4 @@
+outs:
+- md5: 140d830eb182c3d438a54c2287d69d82
+  size: 4408794
+  path: gps_info.json
