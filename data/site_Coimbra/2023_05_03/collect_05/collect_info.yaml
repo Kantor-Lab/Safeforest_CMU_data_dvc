@@ -1,0 +1,25 @@
+time: # Unix time
+- takeoff: null
+- land: null
+- at_survey_altitude: null
+- finished_survey_altitude: null
+
+payload:
+- working_sensors: null
+- faulty_sensors: null
+- inclination_angle: null
+
+environment:
+- lighting_conditions: null
+- wind_speed: null
+- local_time: null
+
+flight_plan:
+- autonomous: null
+- above_canopy: null
+- target_altitude: null # m above ground
+- flight_speed: null # m/s
+
+general: 
+- people_present: null
+- objective: null 
