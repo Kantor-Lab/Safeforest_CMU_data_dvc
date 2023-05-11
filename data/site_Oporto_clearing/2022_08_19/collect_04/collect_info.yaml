@@ -1,24 +1,27 @@
 environment:
-  gps_location: null
-  lighting_conditions: null
-  local_time: null
-  wind_speed: null
+  gps_location: [0.0, 0.0]
+  lighting_conditions: ""
+  local_time: 0.0
+  wind_speed: 0.0
 flight_plan:
   above_canopy: null
   autonomous: null
   flight_speed: null
   target_altitude: null
 general:
-  notes: null
-  objective: null
-  people_present: null
+  notes: ""
+  objective: ""
+  people_present: ""
 payload:
-  camera_exposure: null
-  faulty_sensor_topics: null
-  faulty_sensors_description: null
-  inclination_angle: null
-  quality: null
-  working_sensor_topics: null
+  camera_exposure: -1
+  missing_sensors_topics: []
+  missing_sensors_description: ""
+  faulty_sensor_topics: []
+  faulty_sensors_description: ""
+  inclination_angle: -1
+  quality: -1
+  working_sensor_topics: []
+  working_sensors_description: ""
 time:
   at_survey_altitude: null
   finished_survey_altitude: null
