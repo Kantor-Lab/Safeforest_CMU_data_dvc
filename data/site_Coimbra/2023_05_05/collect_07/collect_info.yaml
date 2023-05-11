@@ -5,9 +5,12 @@ time: # Unix time
 - finished_survey_altitude: null
 
 payload:
-- working_sensors: null
-- faulty_sensors: null
-- inclination_angle: null
+- working_sensor_topics: null 
+- faulty_sensor_topics: null
+- inclination_angle: null # Degrees from horizontal
+- faulty_sensors_description: null 
+- camera_exposure: null
+- quality: null # Qualitative assessment 1-10, capturing present sensors and flight execution
 
 environment:
 - lighting_conditions: null
@@ -23,3 +26,4 @@ flight_plan:
 general: 
 - people_present: null
 - objective: null 
+- notes: null
