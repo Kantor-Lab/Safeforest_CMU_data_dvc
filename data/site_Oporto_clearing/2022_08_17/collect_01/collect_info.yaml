@@ -1,0 +1,30 @@
+time: # Unix time
+  takeoff: null
+  land: null
+  at_survey_altitude: null
+  finished_survey_altitude: null
+
+payload:
+  working_sensor_topics: null
+  faulty_sensor_topics: null
+  inclination_angle: null # Degrees from horizontal
+  faulty_sensors_description: null
+  camera_exposure: null
+  quality: null # Qualitative assessment 1-10, capturing present sensors and flight execution
+
+environment:
+  lighting_conditions: null
+  wind_speed: null
+  local_time: null
+  gps_location: null # lat/long
+
+flight_plan:
+  autonomous: null
+  above_canopy: null
+  target_altitude: null # m above ground
+  flight_speed: null # m/s
+
+general:
+  people_present: null
+  objective: null
+  notes: null
