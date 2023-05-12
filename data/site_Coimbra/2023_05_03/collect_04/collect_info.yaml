@@ -1,34 +1,34 @@
 environment:
-  year:      # YYYY
-  month:      # MM
-  day:      # DD
-  gps_location: [null, null, null] # lat(deg), long(deg), elev(m)/optional
-  location_description: # Can be a short tag or description
-  lighting_conditions: '' # sunny, overcast, variable, low-angle
+  year: 2024     # YYYY
+  month: 05     # MM
+  day: 03     # DD
+  gps_location: [40.1848845, -8.4137903, 38.4273186] # lat(deg), long(deg), elev(m)/optional
+  location_description: "DEM field" # Can be a short tag or description
+  lighting_conditions: 'sunny' # sunny, overcast, variable, low-angle
   local_time:      # HH:MM
   wind_speed:      # M/S
 flight_plan:
-  above_canopy:      # bool
-  autonomous_survey:      # bool
+  above_canopy: false     # bool
+  autonomous_survey: false     # bool
   flight_speed:      # M/S
   target_altitude:      # M above ground
 general:
   notes: '' # Freeform notes
   objective: '' # Goal of the flight
-  people_present: '' # List of names
+  people_present: 'Babak Chehreh, Duda Andrada, David Russell' # List of names
 payload:
-  camera_exposure: -1 # camera exposure in ms
+  camera_exposure: 300 # camera exposure in ms
   missing_sensors_topics:      # A list of ros topic names which didn't show up at all
   missing_sensors_description: '' # A freeform description of missing topcs
   faulty_sensor_topics:      # A list of ros topic names for topics which were faulty. Either dropped mid way or were degraded
   faulty_sensors_description: '' # A freeform description of faulty topic
-  inclination_angle: -1 # Inclination in degrees from horizontal
-  quality: -1 # Qualitative assessment from 1-10, capturing all elements of the collect
+  inclination_angle: 30 # Inclination in degrees from horizontal
+  quality: 7 # Qualitative assessment from 1-10, capturing all elements of the collect
   working_sensor_topics:      # A list of working sensor topics
-  working_sensors_description: '' # A freeform description of working sensor topcsi
-  camera_synced:      # bool, were the cameras used sychnonously or freerun
+  working_sensors_description: 'All of them look good!' # A freeform description of working sensor topcsi
+  camera_synced: true     # bool, were the cameras used sychnonously or freerun
 time:
   at_survey_altitude:      # What unix time did the platform get to survey altitude
   finished_survey_altitude:      # What unix time did the platform leave survey altitude
-  land:      # What unix time to the platform takeoff
+  land: 1546322815.092990     # What unix time to the platform takeoff
   takeoff:      # What unix time did the platform land
