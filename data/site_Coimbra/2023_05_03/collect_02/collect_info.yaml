@@ -6,6 +6,7 @@ environment:
   lighting_conditions: # sunny, overcast, variable, low-angle
   local_time: # HH:MM
   wind_speed: # M/S
+  location_description:
 flight_plan:
   above_canopy: true # bool
   autonomous_survey: true # bool
@@ -21,13 +22,9 @@ payload:
   camera_aperture: # f-stop value
   missing_sensors_topics: # A list of ros topic names which didn't show up at all
   missing_sensors_description: # A freeform description of missing topcs
-  faulty_sensor_topics: [
-      "/left/camera/image_raw",
-      "/right/camera/image_raw",
-      "/velodyne_packets",
-      "/dji_sdk/gps_position",
-    ] # A list of ros topic names for topics which were faulty. Either dropped mid way or were degraded
-  faulty_sensors_description: "Nuc ran out of storage" # A freeform description of faulty topic
+  faulty_sensor_topics: [/left/camera/image_raw, /right/camera/image_raw, /velodyne_packets,
+    /dji_sdk/gps_position] # A list of ros topic names for topics which were faulty. Either dropped mid way or were degraded
+  faulty_sensors_description: Nuc ran out of storage   # A freeform description of faulty topic
   inclination_angle: 75 # Inclination in degrees from horizontal
   quality: 2 # Qualitative assessment from 1-10, capturing all elements of the collect
   working_sensor_topics: # A list of working sensor topics
