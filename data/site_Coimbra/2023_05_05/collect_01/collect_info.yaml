@@ -1,34 +1,36 @@
 environment:
-  year: 2023     # YYYY
-  month: 05     # MM
-  day: 05     # DD
+  year: 2023 # YYYY
+  month: 05 # MM
+  day: 05 # DD
   gps_location: [40.1848845, -8.4137903, 38.4273186] # lat(deg), long(deg), elev(m)/optional
   location_description: "DEM field" # Can be a short tag or description
-  lighting_conditions: 'sunny' # sunny, overcast, variable, low-angle
-  local_time:      # HH:MM
-  wind_speed:      # M/S
+  lighting_conditions: "sunny" # sunny, overcast, variable, low-angle
+  local_time: # HH:MM
+  wind_speed: # M/S
 flight_plan:
-  above_canopy: true     # bool
-  autonomous_survey: true     # bool
-  flight_speed: 3.5     # M/S
-  target_altitude: 40     # M above ground
+  above_canopy: true # bool
+  autonomous_survey: true # bool
+  flight_speed: 3.5 # M/S
+  target_altitude: 40 # M above ground
 general:
-  notes: 'Flight lines were along the long direction of the area' # Freeform notes
-  objective: '' # Goal of the flight
-  people_present: 'David, Duda, Babak' # List of names
+  notes: "Flight lines were along the long direction of the area" # Freeform notes
+  objective: # Goal of the flight
+  people_present: "David, Duda, Babak" # List of names
 payload:
   camera_exposure: 300 # camera exposure in ms
-  missing_sensors_topics: ["/fix"]     # A list of ros topic names which didn't show up at all
-  missing_sensors_description: '' # A freeform description of missing topcs
-  faulty_sensor_topics:      # A list of ros topic names for topics which were faulty. Either dropped mid way or were degraded
-  faulty_sensors_description: '' # A freeform description of faulty topic
+  camera_focus: # The camera focus distance (m)
+  camera_aperture: # f-stop value
+  missing_sensors_topics: ["/fix"] # A list of ros topic names which didn't show up at all
+  missing_sensors_description: # A freeform description of missing topcs
+  faulty_sensor_topics: # A list of ros topic names for topics which were faulty. Either dropped mid way or were degraded
+  faulty_sensors_description: # A freeform description of faulty topic
   inclination_angle: 75 # Inclination in degrees from horizontal
   quality: 8 # Qualitative assessment from 1-10, capturing all elements of the collect
-  working_sensor_topics:      # A list of working sensor topics
-  working_sensors_description: '' # A freeform description of working sensor topcsi
-  camera_synced: true     # bool, were the cameras used sychnonously or freerun
+  working_sensor_topics: # A list of working sensor topics
+  working_sensors_description: # A freeform description of working sensor topcsi
+  camera_synced: true # bool, were the cameras used sychnonously or freerun
 time:
-  at_survey_altitude:      # What unix time did the platform get to survey altitude
-  finished_survey_altitude:      # What unix time did the platform leave survey altitude
-  land:      # What unix time to the platform takeoff
-  takeoff:      # What unix time did the platform land
+  at_survey_altitude: # What unix time did the platform get to survey altitude
+  finished_survey_altitude: # What unix time did the platform leave survey altitude
+  land: # What unix time to the platform takeoff
+  takeoff: # What unix time did the platform land
