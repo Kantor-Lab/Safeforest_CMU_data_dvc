@@ -1,8 +1,8 @@
 environment:
-  year: 2020 # YYYY
+  year:      # YYYY
   month:      # MM
   day:      # DD
-  gps_location: [null, null] # lat, long
+  gps_location: [null, null, null] # lat(deg), long(deg), alt(m)/optional
   lighting_conditions: '' # sunny, overcast, variable, low-angle
   local_time:      # HH:MM
   wind_speed:      # M/S
