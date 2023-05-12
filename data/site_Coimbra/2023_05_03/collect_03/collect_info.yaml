@@ -2,7 +2,7 @@ environment:
   year:      # YYYY
   month:      # MM
   day:      # DD
-  gps_location: [null, null, null] # lat(deg), long(deg), alt(m)/optional
+  gps_location: [40.1848845, -8.4137903, 38.4273186] # lat(deg), long(deg), alt(m)/optional
   lighting_conditions: '' # sunny, overcast, variable, low-angle
   local_time:      # HH:MM
   wind_speed:      # M/S
@@ -10,7 +10,7 @@ flight_plan:
   above_canopy:      # bool
   autonomous_survey:      # bool
   flight_speed:      # M/S
-  target_altitude:      # M above ground
+  target_altitude: 40      # M above ground
 general:
   notes: '' # Freeform notes
   objective: '' # Goal of the flight

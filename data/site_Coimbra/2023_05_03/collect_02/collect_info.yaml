@@ -1,14 +1,14 @@
 environment:
-  year:      # YYYY
-  month:      # MM
-  day:      # DD
-  gps_location: [null, null, null] # lat(deg), long(deg), alt(m)/optional
+  year: 2023     # YYYY
+  month: 05     # MM
+  day: 03     # DD
+  gps_location: [40.1848845, -8.4137903, 38.4273186] # lat(deg), long(deg), alt(m)/optional
   lighting_conditions: '' # sunny, overcast, variable, low-angle
   local_time:      # HH:MM
   wind_speed:      # M/S
 flight_plan:
-  above_canopy:      # bool
-  autonomous_survey:      # bool
+  above_canopy: true     # bool
+  autonomous_survey: true     # bool
   flight_speed:      # M/S
   target_altitude:      # M above ground
 general:
@@ -19,13 +19,13 @@ payload:
   camera_exposure: -1 # camera exposure in ms
   missing_sensors_topics:      # A list of ros topic names which didn't show up at all
   missing_sensors_description: '' # A freeform description of missing topcs
-  faulty_sensor_topics:      # A list of ros topic names for topics which were faulty. Either dropped mid way or were degraded
-  faulty_sensors_description: '' # A freeform description of faulty topic
-  inclination_angle: -1 # Inclination in degrees from horizontal
-  quality: -1 # Qualitative assessment from 1-10, capturing all elements of the collect
+  faulty_sensor_topics: ["/left/camera/image_raw", "/right/camera/image_raw", "/velodyne_packets", "/dji_sdk/gps_position"]     # A list of ros topic names for topics which were faulty. Either dropped mid way or were degraded
+  faulty_sensors_description: 'Nuc ran out of storage' # A freeform description of faulty topic
+  inclination_angle: 75 # Inclination in degrees from horizontal
+  quality: 2 # Qualitative assessment from 1-10, capturing all elements of the collect
   working_sensor_topics:      # A list of working sensor topics
   working_sensors_description: '' # A freeform description of working sensor topcsi
-  camera_synced:      # bool, were the cameras used sychnonously or freerun
+  camera_synced: true     # bool, were the cameras used sychnonously or freerun
 time:
   at_survey_altitude:      # What unix time did the platform get to survey altitude
   finished_survey_altitude:      # What unix time did the platform leave survey altitude

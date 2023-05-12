@@ -2,7 +2,8 @@ environment:
   year:      # YYYY
   month:      # MM
   day:      # DD
-  gps_location: [null, null, null] # lat(deg), long(deg), alt(m)/optional
+  gps_location: [null, null, null] # lat(deg), long(deg), elev(m)/optional
+  location_description: # Can be a short tag or description
   lighting_conditions: '' # sunny, overcast, variable, low-angle
   local_time:      # HH:MM
   wind_speed:      # M/S
