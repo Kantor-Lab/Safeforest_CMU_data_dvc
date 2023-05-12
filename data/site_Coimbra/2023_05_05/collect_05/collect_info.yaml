@@ -1,15 +1,15 @@
 environment:
-  year: # YYYY
-  month: # MM
-  day: # DD
+  year: 2023 # YYYY
+  month: 05 # MM
+  day: 05 # DD
   gps_location: # lat(deg), long(deg), elev(m)/optional
-  location_description: # Can be a short tag or description
+  location_description: "DEM field #2" # Can be a short tag or description
   lighting_conditions: # sunny, overcast, variable, low-angle
   local_time: # HH:MM
   wind_speed: # M/S
 flight_plan:
-  above_canopy: # bool
-  autonomous_survey: # bool
+  above_canopy: false # bool
+  autonomous_survey: false # bool
   flight_speed: # M/S
   target_altitude: # M above ground
 general:
@@ -17,15 +17,15 @@ general:
   objective: # Goal of the flight
   people_present: # List of names
 payload:
-  camera_exposure: # camera exposure in ms
+  camera_exposure: 300 # camera exposure in ms
   camera_focus: # The camera focus distance (m)
   camera_aperture: # f-stop value
   missing_sensors_topics: # A list of ros topic names which didn't show up at all
   missing_sensors_description: # A freeform description of missing topics
-  faulty_sensor_topics: # A list of ros topic names for topics which were faulty. Either dropped mid way or were degraded
-  faulty_sensors_description: # A freeform description of faulty topic
-  inclination_angle: # Inclination in degrees from horizontal
-  quality: # Qualitative assessment from 1-10, capturing all elements of the collect
+  faulty_sensor_topics: ["/left/camera/image_raw"]# A list of ros topic names for topics which were faulty. Either dropped mid way or were degraded
+  faulty_sensors_description: "Left camera drops out" # A freeform description of faulty topic
+  inclination_angle: 30 # Inclination in degrees from horizontal
+  quality: 5 # Qualitative assessment from 1-10, capturing all elements of the collect
   working_sensor_topics: # A list of working sensor topics
   working_sensors_description: # A freeform description of working sensor topics
   camera_synced: # bool, were the cameras used synchronously or free-run
