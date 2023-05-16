@@ -1,7 +1,7 @@
 environment:
-  year: # YYYY
-  month: # MM
-  day: # DD
+  year: 2023 # YYYY
+  month: 04 # MM
+  day: 27 # DD
   gps_location: # lat(deg), long(deg), elev(m)/optional
   location_description: # Can be a short tag or description
   lighting_conditions: # sunny, overcast, variable, low-angle
@@ -20,7 +20,7 @@ payload:
   camera_exposure: # camera exposure in ms
   camera_focus: # The camera focus distance (m)
   camera_aperture: # f-stop value
-  missing_sensors_topics: # A list of ros topic names which didn't show up at all
+  missing_sensors_topics: [/velodyne_packets]   # A list of ros topic names which didn't show up at all
   missing_sensors_description: # A freeform description of missing topics
   faulty_sensor_topics: # A list of ros topic names for topics which were faulty. Either dropped mid way or were degraded
   faulty_sensors_description: # A freeform description of faulty topic
