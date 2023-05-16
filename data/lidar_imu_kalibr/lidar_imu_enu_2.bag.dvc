@@ -1,0 +1,5 @@
+outs:
+- md5: ebe6fbcf3327d553fa91e7209c58222d
+  size: 1219884492
+  isexec: true
+  path: lidar_imu_enu_2.bag

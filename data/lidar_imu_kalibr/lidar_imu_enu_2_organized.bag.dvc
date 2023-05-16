@@ -1,0 +1,4 @@
+outs:
+- md5: ef64b3a509963a9bb0dec0a6c7c98a47
+  size: 1066580643
+  path: lidar_imu_enu_2_organized.bag
