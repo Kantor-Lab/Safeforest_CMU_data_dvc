@@ -1,0 +1,5 @@
+outs:
+- md5: 48c84d85418a5a9bf435406749c8346f
+  size: 2099284128
+  isexec: true
+  path: data_2019-01-01-00-17-30_11.bag
