@@ -1,0 +1,8 @@
+Project; example-run-001_20230516T1825
+Agisoft Metashape Professional Version; 1.8.4
+Processing started; 20230516T1825
+Node; dev-07-derek-9-image-david
+CPU; x86_64
+Number of GPUs Found; 1
+GPU Model; GRID A100X-40C
+GPU Mask; 4294967295
