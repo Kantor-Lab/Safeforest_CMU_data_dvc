@@ -1,0 +1,4 @@
+outs:
+- md5: 93e49ed74e27be5ac6c444a6d4805b53
+  size: 1200181820
+  path: example-run-001_20230517T1721_ortho_dsm.tif
