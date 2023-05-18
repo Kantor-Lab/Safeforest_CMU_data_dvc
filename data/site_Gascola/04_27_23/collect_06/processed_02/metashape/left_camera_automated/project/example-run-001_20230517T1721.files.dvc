@@ -1,0 +1,5 @@
+outs:
+- md5: de24ade506087eda09feb56afe21ad20.dir
+  size: 5945187830
+  nfiles: 240
+  path: example-run-001_20230517T1721.files
