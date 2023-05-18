@@ -13,10 +13,10 @@ photo_path: "/ofo-share/repos-david/Safeforest_CMU_data_dvc/data/site_Coimbra/20
 multispectral: False # Is this a multispectral photo set? If RGB, set to False.
 
 # Path for exports (e.g., points, DSM, orthomosaic) and processing log. Will be created if does not exist.
-output_path: "/home/exouser/data/Safeforest_CMU_data_dvc/data/site_Coimbra/2023_05_05/collect_05/processed_2/metashape/left_camera_automated/exports"
+output_path: "/ofo-share/repos-david/Safeforest_CMU_data_dvc/data/site_Coimbra/2023_05_05/collect_05/processed_02/metashape/left_camera_automated/exports"
 
 # Path to save Metashape project file (.psx). Will be created if does not exist
-project_path: "/home/exouser/data/Safeforest_CMU_data_dvc/data/site_Coimbra/2023_05_05/collect_05/processed_02/metashape/left_camera_automated/project"
+project_path: "/ofo-share/repos-david/Safeforest_CMU_data_dvc/data/site_Coimbra/2023_05_05/collect_05/processed_02/metashape/left_camera_automated/project"
 
 # The identifier for the run. Will be used in naming output files. Recommended to include a photoset name and processing parameter set name.
 # Optionally, set it to "from_config_filename" to use the config file name (minus extension) as the run name
