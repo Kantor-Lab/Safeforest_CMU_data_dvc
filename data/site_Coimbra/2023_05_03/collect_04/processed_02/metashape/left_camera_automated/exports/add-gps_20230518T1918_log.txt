@@ -1,0 +1,10 @@
+Project; add-gps_20230518T1918
+Agisoft Metashape Professional Version; 2.0.0
+Processing started; 20230518T1918
+Node; dev-07-derek-9-image-david
+CPU; x86_64
+Number of GPUs Found; 1
+GPU Model; GRID A100X-40C
+GPU Mask; 4294967295
+Align Photos; 1228.9
+Build Depth Maps; 1430.1
