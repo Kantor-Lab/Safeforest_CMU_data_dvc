@@ -1,0 +1,3 @@
+training:
+  over_canopy true
+  n_images 31
