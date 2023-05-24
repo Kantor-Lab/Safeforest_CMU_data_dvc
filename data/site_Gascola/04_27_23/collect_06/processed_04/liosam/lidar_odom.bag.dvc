@@ -1,0 +1,4 @@
+outs:
+- md5: 895dbf0b8410cc595f864db3c6f69e19
+  size: 817664
+  path: lidar_odom.bag
