@@ -1,0 +1,5 @@
+outs:
+- md5: 52a8628fc11abc5ed44078a1806d1d93.dir
+  size: 17264923401
+  nfiles: 350
+  path: 0.05_delta_20230519T0316.files
