@@ -1,7 +1,7 @@
 environment:
   year: 2023 # YYYY
   month: 05 # MM
-  day: 03 # DD
+  day: 05 # DD
   gps_location: # lat(deg), long(deg), elev(m)/optional
   location_description: "bus stop forest" # Can be a short tag or description
   lighting_conditions: # sunny, overcast, variable, low-angle
