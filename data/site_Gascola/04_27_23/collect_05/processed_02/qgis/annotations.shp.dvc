@@ -1,0 +1,4 @@
+outs:
+- md5: 9834e1423b91be613511d6b576429d6b
+  size: 100
+  path: annotations.shp
