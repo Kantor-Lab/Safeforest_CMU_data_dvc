@@ -1,0 +1,4 @@
+outs:
+- md5: dac544ebd4ea809877daad184c381671
+  size: 984721339
+  path: iter_4000.pth
