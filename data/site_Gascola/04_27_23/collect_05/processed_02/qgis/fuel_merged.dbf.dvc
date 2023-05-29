@@ -1,0 +1,4 @@
+outs:
+- md5: e1915985658b1707fcb6a5a222c79b21
+  size: 147
+  path: fuel_merged.dbf

@@ -1,0 +1,4 @@
+outs:
+- md5: 43ea62b3ef745541983994fe0e1ee9c6
+  size: 53888
+  path: fuel_merged.shp

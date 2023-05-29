@@ -1,0 +1,4 @@
+outs:
+- md5: dbee48c4a4d7cf5cc47a7e2ff047cfe1
+  size: 60596
+  path: background_cleaned.shp

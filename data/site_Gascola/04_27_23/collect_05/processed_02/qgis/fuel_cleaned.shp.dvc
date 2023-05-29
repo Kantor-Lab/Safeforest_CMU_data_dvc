@@ -1,0 +1,4 @@
+outs:
+- md5: 2c9ee193f3eef96c2e04154f80a1539b
+  size: 56984
+  path: fuel_cleaned.shp

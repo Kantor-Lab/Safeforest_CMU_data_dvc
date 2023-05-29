@@ -1,0 +1,4 @@
+outs:
+- md5: 1d13119134ba26435406385de737f9b5
+  size: 3954
+  path: fuel_cleaned.dbf

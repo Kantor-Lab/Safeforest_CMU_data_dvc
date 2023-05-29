@@ -1,0 +1,4 @@
+outs:
+- md5: 663bab90851714b2bac8e4d45d8f33d8
+  size: 50252
+  path: canopy_merged.shp

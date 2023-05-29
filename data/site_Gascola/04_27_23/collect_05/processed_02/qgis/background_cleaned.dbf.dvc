@@ -1,0 +1,4 @@
+outs:
+- md5: c2a3866a11cedf0590251cd40eb3406e
+  size: 1190
+  path: background_cleaned.dbf

@@ -1,0 +1,4 @@
+outs:
+- md5: 8d7ac0dd2174ecc8ceb30a83e662716a
+  size: 189
+  path: canopy_merged.dbf
