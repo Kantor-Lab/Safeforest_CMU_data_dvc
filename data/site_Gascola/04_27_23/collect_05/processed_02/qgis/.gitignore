@@ -1,4 +1,3 @@
-/example-run-001_20230517T1827.qgz
 /example-run-001_20230517T1827_v2.qgz
 /canopy.cpg
 /canopy.dbf
@@ -20,7 +19,6 @@
 /bare_earth_background.shp
 /bare_earth_background.prj
 /bare_earth_background.cpg
-/example-run-001_20230517T1827_v2_backup.qgz
 /background_cleaned.dbf
 /background_cleaned.prj
 /background_cleaned.shp
