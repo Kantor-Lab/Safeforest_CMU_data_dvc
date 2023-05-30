@@ -1,4 +1,4 @@
 outs:
 - md5: 781fcb28215d5217a0606dcfc23069b4
   size: 108
-  path: canopy_merged.shx
+  path: canopy_final.shx
