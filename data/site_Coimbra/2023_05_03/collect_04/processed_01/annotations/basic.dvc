@@ -1,0 +1,5 @@
+outs:
+- md5: 7b07b775ae80568612461debd42bfadf.dir
+  size: 329737184
+  nfiles: 72
+  path: basic

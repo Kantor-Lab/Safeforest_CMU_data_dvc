@@ -1,0 +1,5 @@
+outs:
+- md5: b2af3570d45945aa6aeb71be89d26d5d.dir
+  size: 272864445
+  nfiles: 153
+  path: safeforest23_condensed
