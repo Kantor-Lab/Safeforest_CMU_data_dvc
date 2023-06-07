@@ -1,0 +1,5 @@
+outs:
+- md5: f92234d59c3c7372e4488e476c83c190.dir
+  size: 647703589
+  nfiles: 440
+  path: safeforest_condensed
