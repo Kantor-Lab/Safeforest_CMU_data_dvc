@@ -1,0 +1,125 @@
+/ofo-share/repos-david/mmsegmentation_v2/mmseg/models/builder.py:36: UserWarning: ``build_loss`` would be deprecated soon, please use ``mmseg.registry.MODELS.build()``
+  warnings.warn('``build_loss`` would be deprecated soon, please use '
+/ofo-share/repos-david/mmsegmentation_v2/mmseg/models/losses/cross_entropy_loss.py:235: UserWarning: Default ``avg_non_ignore`` is False, if you would like to ignore the certain label and average loss over non-ignore labels, which is the same with PyTorch official cross_entropy, set ``avg_non_ignore=True``.
+  warnings.warn(
+/ofo-share/repos-david/mmsegmentation_v2/mmseg/engine/hooks/visualization_hook.py:61: UserWarning: The draw is False, it means that the hook for visualization will not take effect. The results will NOT be visualized or stored.
+  warnings.warn('The draw is False, it means that the '
+Traceback (most recent call last):
+  File "/ofo-share/repos-david/conda/envs/openmmlab/lib/python3.8/site-packages/mmengine/registry/build_functions.py", line 122, in build_from_cfg
+    obj = obj_cls(**args)  # type: ignore
+  File "/ofo-share/repos-david/mmsegmentation_v2/mmseg/datasets/safeforest23_compressed.py", line 28, in __init__
+    super().__init__(
+  File "/ofo-share/repos-david/mmsegmentation_v2/mmseg/datasets/basesegdataset.py", line 142, in __init__
+    self.full_init()
+  File "/ofo-share/repos-david/conda/envs/openmmlab/lib/python3.8/site-packages/mmengine/dataset/base_dataset.py", line 296, in full_init
+    self.data_list = self.load_data_list()
+  File "/ofo-share/repos-david/mmsegmentation_v2/mmseg/datasets/basesegdataset.py", line 253, in load_data_list
+    for img in fileio.list_dir_or_file(
+  File "/ofo-share/repos-david/conda/envs/openmmlab/lib/python3.8/site-packages/mmengine/fileio/io.py", line 760, in list_dir_or_file
+    yield from backend.list_dir_or_file(dir_path, list_dir, list_file, suffix,
+  File "/ofo-share/repos-david/conda/envs/openmmlab/lib/python3.8/site-packages/mmengine/fileio/backends/local_backend.py", line 527, in _list_dir_or_file
+    for entry in os.scandir(dir_path):
+FileNotFoundError: [Errno 2] No such file or directory: '/ofo-share/repos-david/Safeforest_CMU_data_dvc//data/site_Gascola/04_27_23/collect_04/processed_01/annotations/safeforest23_compressed/img_dir/train'
+During handling of the above exception, another exception occurred:
+Traceback (most recent call last):
+  File "/ofo-share/repos-david/conda/envs/openmmlab/lib/python3.8/site-packages/mmengine/registry/build_functions.py", line 122, in build_from_cfg
+    obj = obj_cls(**args)  # type: ignore
+  File "/ofo-share/repos-david/conda/envs/openmmlab/lib/python3.8/site-packages/mmengine/runner/loops.py", line 219, in __init__
+    super().__init__(runner, dataloader)
+  File "/ofo-share/repos-david/conda/envs/openmmlab/lib/python3.8/site-packages/mmengine/runner/base_loop.py", line 26, in __init__
+    self.dataloader = runner.build_dataloader(
+  File "/ofo-share/repos-david/conda/envs/openmmlab/lib/python3.8/site-packages/mmengine/runner/runner.py", line 1346, in build_dataloader
+    dataset = DATASETS.build(dataset_cfg)
+  File "/ofo-share/repos-david/conda/envs/openmmlab/lib/python3.8/site-packages/mmengine/registry/registry.py", line 548, in build
+    return self.build_func(cfg, *args, **kwargs, registry=self)
+  File "/ofo-share/repos-david/conda/envs/openmmlab/lib/python3.8/site-packages/mmengine/registry/build_functions.py", line 144, in build_from_cfg
+    raise type(e)(
+FileNotFoundError: class `Safeforest23CompressedDataset` in mmseg/datasets/safeforest23_compressed.py: [Errno 2] No such file or directory: '/ofo-share/repos-david/Safeforest_CMU_data_dvc//data/site_Gascola/04_27_23/collect_04/processed_01/annotations/safeforest23_compressed/img_dir/train'
+During handling of the above exception, another exception occurred:
+Traceback (most recent call last):
+  File "tools/train.py", line 104, in <module>
+    main()
+  File "tools/train.py", line 100, in main
+    runner.train()
+  File "/ofo-share/repos-david/conda/envs/openmmlab/lib/python3.8/site-packages/mmengine/runner/runner.py", line 1687, in train
+    self._train_loop = self.build_train_loop(
+  File "/ofo-share/repos-david/conda/envs/openmmlab/lib/python3.8/site-packages/mmengine/runner/runner.py", line 1479, in build_train_loop
+    loop = LOOPS.build(
+  File "/ofo-share/repos-david/conda/envs/openmmlab/lib/python3.8/site-packages/mmengine/registry/registry.py", line 548, in build
+    return self.build_func(cfg, *args, **kwargs, registry=self)
+  File "/ofo-share/repos-david/conda/envs/openmmlab/lib/python3.8/site-packages/mmengine/registry/build_functions.py", line 144, in build_from_cfg
+    raise type(e)(
+FileNotFoundError: class `IterBasedTrainLoop` in mmengine/runner/loops.py: class `Safeforest23CompressedDataset` in mmseg/datasets/safeforest23_compressed.py: [Errno 2] No such file or directory: '/ofo-share/repos-david/Safeforest_CMU_data_dvc//data/site_Gascola/04_27_23/collect_04/processed_01/annotations/safeforest23_compressed/img_dir/train'
+06/09 04:28:06 - mmengine - [97m[4mINFO[39m[24m - Distributed training is not used, all SyncBatchNorm (SyncBN) layers in the model will be automatically reverted to BatchNormXd layers if they are used.
+06/09 04:28:06 - mmengine - [97m[4mINFO[39m[24m - Hooks will be executed in the following order:
+before_run:
+(VERY_HIGH   ) RuntimeInfoHook
+(BELOW_NORMAL) LoggerHook
+ --------------------
+before_train:
+(VERY_HIGH   ) RuntimeInfoHook
+(NORMAL      ) IterTimerHook
+(VERY_LOW    ) CheckpointHook
+ --------------------
+before_train_epoch:
+(VERY_HIGH   ) RuntimeInfoHook
+(NORMAL      ) IterTimerHook
+(NORMAL      ) DistSamplerSeedHook
+ --------------------
+before_train_iter:
+(VERY_HIGH   ) RuntimeInfoHook
+(NORMAL      ) IterTimerHook
+ --------------------
+after_train_iter:
+(VERY_HIGH   ) RuntimeInfoHook
+(NORMAL      ) IterTimerHook
+(NORMAL      ) SegVisualizationHook
+(BELOW_NORMAL) LoggerHook
+(LOW         ) ParamSchedulerHook
+(VERY_LOW    ) CheckpointHook
+ --------------------
+after_train_epoch:
+(NORMAL      ) IterTimerHook
+(LOW         ) ParamSchedulerHook
+(VERY_LOW    ) CheckpointHook
+ --------------------
+before_val_epoch:
+(NORMAL      ) IterTimerHook
+ --------------------
+before_val_iter:
+(NORMAL      ) IterTimerHook
+ --------------------
+after_val_iter:
+(NORMAL      ) IterTimerHook
+(NORMAL      ) SegVisualizationHook
+(BELOW_NORMAL) LoggerHook
+ --------------------
+after_val_epoch:
+(VERY_HIGH   ) RuntimeInfoHook
+(NORMAL      ) IterTimerHook
+(BELOW_NORMAL) LoggerHook
+(LOW         ) ParamSchedulerHook
+(VERY_LOW    ) CheckpointHook
+ --------------------
+after_train:
+(VERY_LOW    ) CheckpointHook
+ --------------------
+before_test_epoch:
+(NORMAL      ) IterTimerHook
+ --------------------
+before_test_iter:
+(NORMAL      ) IterTimerHook
+ --------------------
+after_test_iter:
+(NORMAL      ) IterTimerHook
+(NORMAL      ) SegVisualizationHook
+(BELOW_NORMAL) LoggerHook
+ --------------------
+after_test_epoch:
+(VERY_HIGH   ) RuntimeInfoHook
+(NORMAL      ) IterTimerHook
+(BELOW_NORMAL) LoggerHook
+ --------------------
+after_run:
+(BELOW_NORMAL) LoggerHook
+ --------------------
