@@ -1,0 +1,4 @@
+model:
+  data: "trained on gascola collect 04"
+  pretraining: "Default cityscapes"
+
