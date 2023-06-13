@@ -1,0 +1,110 @@
+diff --git a/configs/_base_/datasets/safeforest23_compressed_sete_fonte.py b/configs/_base_/datasets/safeforest23_compressed_sete_fonte.py
+index 7f8e660..45b9d0d 100644
+--- a/configs/_base_/datasets/safeforest23_compressed_sete_fonte.py
++++ b/configs/_base_/datasets/safeforest23_compressed_sete_fonte.py
+@@ -16,28 +16,6 @@ train_pipeline = [
+     dict(type='RandomFlip', prob=0.5),
+     dict(type='PhotoMetricDistortion'),
+     dict(type='PackSegInputs'),
+-    dict(type="Albu", transforms =[
+-            dict(
+-                type='ShiftScaleRotate',
+-                shift_limit=0.0625,
+-                scale_limit=0.0,
+-                rotate_limit=0,
+-                interpolation=1,
+-                p=0.5),
+-            dict(
+-                type='RandomBrightnessContrast',
+-                brightness_limit=[0.1, 0.3],
+-                contrast_limit=[0.1, 0.3],
+-                p=0.2),
+-            dict(type='ChannelShuffle', p=0.1),
+-            dict(
+-                type='OneOf',
+-                transforms=[
+-                    dict(type='Blur', blur_limit=3, p=1.0),
+-                    dict(type='MedianBlur', blur_limit=3, p=1.0)
+-                ],
+-                p=0.1),
+-        ])
+ ]
+ test_pipeline = [
+     dict(type='LoadImageFromFile'),
+diff --git a/configs/_base_/datasets/safeforest_coimbra_2023_05_05_collect_04.py b/configs/_base_/datasets/safeforest_coimbra_2023_05_05_collect_04.py
+index 76951ce..a14fe49 100644
+--- a/configs/_base_/datasets/safeforest_coimbra_2023_05_05_collect_04.py
++++ b/configs/_base_/datasets/safeforest_coimbra_2023_05_05_collect_04.py
+@@ -14,7 +14,7 @@ train_pipeline = [
+     dict(type='RandomCrop', crop_size=crop_size, cat_max_ratio=0.75),
+     dict(type='RandomFlip', prob=0.5),
+     dict(type='PhotoMetricDistortion'),
+-    dict(type='PackSegInputs')
++    dict(type='PackSegInputs'),
+     dict(type="Albu", transforms =[
+             dict(
+                 type='ShiftScaleRotate',
+diff --git a/configs/_base_/datasets/safeforest_gascola_23_04_27_collect_04_compressed.py b/configs/_base_/datasets/safeforest_gascola_23_04_27_collect_04_compressed.py
+index cbdf22e..73211e2 100644
+--- a/configs/_base_/datasets/safeforest_gascola_23_04_27_collect_04_compressed.py
++++ b/configs/_base_/datasets/safeforest_gascola_23_04_27_collect_04_compressed.py
+@@ -15,28 +15,6 @@ train_pipeline = [
+     dict(type='RandomFlip', prob=0.5),
+     dict(type='PhotoMetricDistortion'),
+     dict(type='PackSegInputs'),
+-    dict(type="Albu", transforms =[
+-            dict(
+-                type='ShiftScaleRotate',
+-                shift_limit=0.0625,
+-                scale_limit=0.0,
+-                rotate_limit=0,
+-                interpolation=1,
+-                p=0.5),
+-            dict(
+-                type='RandomBrightnessContrast',
+-                brightness_limit=[0.1, 0.3],
+-                contrast_limit=[0.1, 0.3],
+-                p=0.2),
+-            dict(type='ChannelShuffle', p=0.1),
+-            dict(
+-                type='OneOf',
+-                transforms=[
+-                    dict(type='Blur', blur_limit=3, p=1.0),
+-                    dict(type='MedianBlur', blur_limit=3, p=1.0)
+-                ],
+-                p=0.1),
+-        ])
+ ]
+ test_pipeline = [
+     dict(type='LoadImageFromFile'),
+diff --git a/configs/segformer/segformer_mit-b0_8xb1-20k_safeforest23_compressed_sete_fonte-512x512.py b/configs/segformer/segformer_mit-b0_8xb1-20k_safeforest23_compressed_sete_fonte-512x512.py
+index 93a1020..883bc80 100644
+--- a/configs/segformer/segformer_mit-b0_8xb1-20k_safeforest23_compressed_sete_fonte-512x512.py
++++ b/configs/segformer/segformer_mit-b0_8xb1-20k_safeforest23_compressed_sete_fonte-512x512.py
+@@ -5,9 +5,9 @@ _base_ = [
+ ]
+ crop_size = (512, 512)
+ data_preprocessor = dict(type='SegDataPreProcessor',
++    size=crop_size,
+     mean=[104.49391897563062, 106.03779528250102, 103.2223719219133],
+-    std=[63.32101522036137, 64.53359365946275, 68.28525305914673],
+-    crop_size)
++    std=[63.32101522036137, 64.53359365946275, 68.28525305914673])
+ model = dict(
+     data_preprocessor=data_preprocessor,
+     backbone=dict(
+diff --git a/tools/model_converters/mit2mmseg.py b/tools/model_converters/mit2mmseg.py
+index f10cbbf..ea4c188 100644
+--- a/tools/model_converters/mit2mmseg.py
++++ b/tools/model_converters/mit2mmseg.py
+@@ -50,6 +50,10 @@ def convert_mit(ckpt):
+             stage_i = int(k.split('.')[0].replace('norm', ''))
+             new_k = k.replace(f'norm{stage_i}', f'layers.{stage_i-1}.2')
+             new_v = v
++        # Remove the backbone from the key
++        elif k.startswith("backbone"):
++            new_k = k[9:]
++            new_v = v
+         else:
+             new_k = k
+             new_v = v

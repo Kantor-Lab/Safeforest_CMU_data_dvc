@@ -1,0 +1,1118 @@
+/ofo-share/repos-david/mmsegmentation_v2/mmseg/models/builder.py:36: UserWarning: ``build_loss`` would be deprecated soon, please use ``mmseg.registry.MODELS.build()``
+  warnings.warn('``build_loss`` would be deprecated soon, please use '
+/ofo-share/repos-david/mmsegmentation_v2/mmseg/models/losses/cross_entropy_loss.py:235: UserWarning: Default ``avg_non_ignore`` is False, if you would like to ignore the certain label and average loss over non-ignore labels, which is the same with PyTorch official cross_entropy, set ``avg_non_ignore=True``.
+  warnings.warn(
+/ofo-share/repos-david/mmsegmentation_v2/mmseg/engine/hooks/visualization_hook.py:61: UserWarning: The draw is False, it means that the hook for visualization will not take effect. The results will NOT be visualized or stored.
+  warnings.warn('The draw is False, it means that the '
+Traceback (most recent call last):
+  File "tools/train.py", line 104, in <module>
+    main()
+  File "tools/train.py", line 100, in main
+    runner.train()
+  File "/ofo-share/repos-david/conda/envs/openmmlab/lib/python3.8/site-packages/mmengine/runner/runner.py", line 1721, in train
+    model = self.train_loop.run()  # type: ignore
+  File "/ofo-share/repos-david/conda/envs/openmmlab/lib/python3.8/site-packages/mmengine/runner/loops.py", line 277, in run
+    data_batch = next(self.dataloader_iterator)
+  File "/ofo-share/repos-david/conda/envs/openmmlab/lib/python3.8/site-packages/mmengine/runner/loops.py", line 164, in __next__
+    data = next(self._iterator)
+  File "/ofo-share/repos-david/conda/envs/openmmlab/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 633, in __next__
+    data = self._next_data()
+  File "/ofo-share/repos-david/conda/envs/openmmlab/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1345, in _next_data
+    return self._process_data(data)
+  File "/ofo-share/repos-david/conda/envs/openmmlab/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1371, in _process_data
+    data.reraise()
+  File "/ofo-share/repos-david/conda/envs/openmmlab/lib/python3.8/site-packages/torch/_utils.py", line 644, in reraise
+    raise exception
+KeyError: Caught KeyError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/ofo-share/repos-david/conda/envs/openmmlab/lib/python3.8/site-packages/torch/utils/data/_utils/worker.py", line 308, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/ofo-share/repos-david/conda/envs/openmmlab/lib/python3.8/site-packages/torch/utils/data/_utils/fetch.py", line 51, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/ofo-share/repos-david/conda/envs/openmmlab/lib/python3.8/site-packages/torch/utils/data/_utils/fetch.py", line 51, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/ofo-share/repos-david/conda/envs/openmmlab/lib/python3.8/site-packages/mmengine/dataset/base_dataset.py", line 408, in __getitem__
+    data = self.prepare_data(idx)
+  File "/ofo-share/repos-david/conda/envs/openmmlab/lib/python3.8/site-packages/mmengine/dataset/base_dataset.py", line 790, in prepare_data
+    return self.pipeline(data_info)
+  File "/ofo-share/repos-david/conda/envs/openmmlab/lib/python3.8/site-packages/mmengine/dataset/base_dataset.py", line 58, in __call__
+    data = t(data)
+  File "/ofo-share/repos-david/conda/envs/openmmlab/lib/python3.8/site-packages/mmcv/transforms/base.py", line 12, in __call__
+    return self.transform(results)
+  File "/ofo-share/repos-david/mmsegmentation_v2/mmseg/datasets/transforms/transforms.py", line 2270, in transform
+    results['image'] = cv2.cvtColor(results['image'], cv2.COLOR_BGR2RGB)
+KeyError: 'image'
+06/12 18:45:43 - mmengine - [97m[4mINFO[39m[24m - Distributed training is not used, all SyncBatchNorm (SyncBN) layers in the model will be automatically reverted to BatchNormXd layers if they are used.
+06/12 18:45:43 - mmengine - [97m[4mINFO[39m[24m - Hooks will be executed in the following order:
+before_run:
+(VERY_HIGH   ) RuntimeInfoHook
+(BELOW_NORMAL) LoggerHook
+ --------------------
+before_train:
+(VERY_HIGH   ) RuntimeInfoHook
+(NORMAL      ) IterTimerHook
+(VERY_LOW    ) CheckpointHook
+ --------------------
+before_train_epoch:
+(VERY_HIGH   ) RuntimeInfoHook
+(NORMAL      ) IterTimerHook
+(NORMAL      ) DistSamplerSeedHook
+ --------------------
+before_train_iter:
+(VERY_HIGH   ) RuntimeInfoHook
+(NORMAL      ) IterTimerHook
+ --------------------
+after_train_iter:
+(VERY_HIGH   ) RuntimeInfoHook
+(NORMAL      ) IterTimerHook
+(NORMAL      ) SegVisualizationHook
+(BELOW_NORMAL) LoggerHook
+(LOW         ) ParamSchedulerHook
+(VERY_LOW    ) CheckpointHook
+ --------------------
+after_train_epoch:
+(NORMAL      ) IterTimerHook
+(LOW         ) ParamSchedulerHook
+(VERY_LOW    ) CheckpointHook
+ --------------------
+before_val_epoch:
+(NORMAL      ) IterTimerHook
+ --------------------
+before_val_iter:
+(NORMAL      ) IterTimerHook
+ --------------------
+after_val_iter:
+(NORMAL      ) IterTimerHook
+(NORMAL      ) SegVisualizationHook
+(BELOW_NORMAL) LoggerHook
+ --------------------
+after_val_epoch:
+(VERY_HIGH   ) RuntimeInfoHook
+(NORMAL      ) IterTimerHook
+(BELOW_NORMAL) LoggerHook
+(LOW         ) ParamSchedulerHook
+(VERY_LOW    ) CheckpointHook
+ --------------------
+after_train:
+(VERY_LOW    ) CheckpointHook
+ --------------------
+before_test_epoch:
+(NORMAL      ) IterTimerHook
+ --------------------
+before_test_iter:
+(NORMAL      ) IterTimerHook
+ --------------------
+after_test_iter:
+(NORMAL      ) IterTimerHook
+(NORMAL      ) SegVisualizationHook
+(BELOW_NORMAL) LoggerHook
+ --------------------
+after_test_epoch:
+(VERY_HIGH   ) RuntimeInfoHook
+(NORMAL      ) IterTimerHook
+(BELOW_NORMAL) LoggerHook
+ --------------------
+after_run:
+(BELOW_NORMAL) LoggerHook
+ --------------------
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.0.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.0.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.0.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.0.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.0.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.0.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.0.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.0.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.0.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.0.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.0.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.0.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.0.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.0.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.0.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.0.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.0.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.0.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.0.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.0.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.0.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.0.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.0.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.0.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.1.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.1.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.1.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.1.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.1.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.1.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.1.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.1.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.1.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.1.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.1.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.1.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.1.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.1.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.1.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.1.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.1.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.1.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.2.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.2.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.2.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.2.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.2.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.2.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.2.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.2.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.2.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.2.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.2.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.2.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.2.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.2.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.2.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.2.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.2.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.0.1.2.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.0.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.0.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.0.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.0.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.0.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.0.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.0.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.0.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.0.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.0.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.0.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.0.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.0.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.0.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.0.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.0.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.0.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.0.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.0.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.0.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.0.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.0.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.0.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.0.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.1.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.1.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.1.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.1.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.1.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.1.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.1.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.1.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.1.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.1.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.1.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.1.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.1.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.1.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.1.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.1.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.1.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.1.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.2.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.2.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.2.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.2.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.2.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.2.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.2.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.2.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.2.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.2.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.2.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.2.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.2.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.2.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.2.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.2.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.2.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.2.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.3.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.3.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.3.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.3.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.3.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.3.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.3.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.3.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.3.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.3.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.3.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.3.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.3.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.3.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.3.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.3.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.3.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.3.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.4.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.4.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.4.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.4.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.4.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.4.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.4.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.4.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.4.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.4.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.4.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.4.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.4.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.4.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.4.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.4.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.4.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.4.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.5.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.5.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.5.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.5.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.5.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.5.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.5.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.5.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.5.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.5.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.5.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.5.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.5.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.5.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.5.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.5.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.5.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.1.1.5.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.0.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.0.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.0.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.0.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.0.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.0.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.0.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.0.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.0.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.0.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.0.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.0.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.0.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.0.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.0.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.0.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.0.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.0.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.0.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.0.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.0.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.0.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.0.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.0.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.1.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.1.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.1.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.1.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.1.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.1.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.1.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.1.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.1.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.1.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.1.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.1.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.1.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.1.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.1.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.1.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.1.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.1.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.2.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.2.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.2.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.2.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.2.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.2.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.2.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.2.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.2.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.2.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.2.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.2.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.2.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.2.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.2.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.2.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.2.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.2.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.3.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.3.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.3.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.3.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.3.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.3.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.3.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.3.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.3.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.3.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.3.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.3.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.3.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.3.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.3.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.3.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.3.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.3.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.4.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.4.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.4.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.4.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.4.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.4.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.4.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.4.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.4.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.4.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.4.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.4.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.4.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.4.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.4.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.4.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.4.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.4.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.5.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.5.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.5.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.5.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.5.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.5.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.5.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.5.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.5.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.5.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.5.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.5.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.5.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.5.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.5.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.5.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.5.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.5.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.6.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.6.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.6.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.6.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.6.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.6.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.6.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.6.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.6.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.6.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.6.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.6.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.6.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.6.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.6.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.6.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.6.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.6.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.7.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.7.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.7.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.7.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.7.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.7.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.7.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.7.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.7.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.7.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.7.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.7.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.7.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.7.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.7.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.7.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.7.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.7.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.8.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.8.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.8.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.8.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.8.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.8.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.8.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.8.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.8.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.8.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.8.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.8.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.8.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.8.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.8.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.8.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.8.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.8.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.9.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.9.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.9.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.9.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.9.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.9.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.9.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.9.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.9.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.9.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.9.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.9.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.9.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.9.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.9.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.9.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.9.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.9.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.10.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.10.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.10.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.10.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.10.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.10.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.10.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.10.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.10.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.10.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.10.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.10.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.10.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.10.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.10.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.10.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.10.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.10.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.11.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.11.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.11.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.11.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.11.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.11.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.11.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.11.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.11.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.11.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.11.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.11.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.11.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.11.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.11.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.11.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.11.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.11.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.12.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.12.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.12.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.12.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.12.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.12.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.12.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.12.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.12.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.12.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.12.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.12.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.12.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.12.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.12.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.12.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.12.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.12.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.13.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.13.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.13.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.13.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.13.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.13.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.13.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.13.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.13.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.13.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.13.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.13.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.13.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.13.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.13.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.13.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.13.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.13.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.14.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.14.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.14.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.14.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.14.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.14.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.14.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.14.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.14.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.14.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.14.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.14.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.14.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.14.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.14.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.14.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.14.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.14.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.15.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.15.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.15.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.15.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.15.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.15.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.15.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.15.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.15.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.15.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.15.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.15.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.15.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.15.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.15.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.15.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.15.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.15.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.16.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.16.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.16.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.16.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.16.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.16.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.16.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.16.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.16.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.16.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.16.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.16.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.16.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.16.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.16.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.16.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.16.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.16.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.17.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.17.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.17.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.17.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.17.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.17.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.17.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.17.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.17.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.17.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.17.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.17.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.17.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.17.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.17.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.17.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.17.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.17.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.18.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.18.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.18.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.18.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.18.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.18.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.18.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.18.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.18.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.18.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.18.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.18.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.18.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.18.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.18.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.18.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.18.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.18.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.19.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.19.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.19.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.19.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.19.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.19.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.19.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.19.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.19.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.19.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.19.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.19.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.19.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.19.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.19.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.19.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.19.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.19.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.20.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.20.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.20.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.20.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.20.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.20.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.20.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.20.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.20.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.20.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.20.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.20.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.20.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.20.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.20.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.20.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.20.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.20.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.21.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.21.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.21.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.21.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.21.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.21.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.21.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.21.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.21.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.21.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.21.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.21.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.21.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.21.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.21.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.21.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.21.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.21.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.22.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.22.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.22.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.22.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.22.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.22.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.22.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.22.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.22.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.22.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.22.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.22.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.22.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.22.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.22.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.22.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.22.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.22.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.23.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.23.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.23.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.23.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.23.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.23.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.23.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.23.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.23.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.23.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.23.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.23.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.23.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.23.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.23.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.23.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.23.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.23.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.24.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.24.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.24.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.24.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.24.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.24.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.24.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.24.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.24.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.24.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.24.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.24.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.24.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.24.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.24.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.24.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.24.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.24.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.25.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.25.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.25.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.25.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.25.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.25.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.25.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.25.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.25.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.25.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.25.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.25.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.25.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.25.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.25.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.25.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.25.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.25.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.26.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.26.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.26.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.26.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.26.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.26.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.26.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.26.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.26.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.26.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.26.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.26.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.26.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.26.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.26.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.26.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.26.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.26.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.27.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.27.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.27.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.27.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.27.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.27.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.27.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.27.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.27.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.27.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.27.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.27.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.27.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.27.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.27.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.27.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.27.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.27.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.28.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.28.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.28.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.28.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.28.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.28.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.28.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.28.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.28.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.28.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.28.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.28.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.28.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.28.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.28.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.28.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.28.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.28.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.29.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.29.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.29.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.29.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.29.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.29.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.29.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.29.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.29.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.29.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.29.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.29.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.29.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.29.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.29.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.29.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.29.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.29.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.30.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.30.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.30.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.30.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.30.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.30.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.30.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.30.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.30.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.30.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.30.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.30.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.30.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.30.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.30.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.30.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.30.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.30.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.31.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.31.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.31.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.31.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.31.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.31.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.31.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.31.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.31.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.31.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.31.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.31.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.31.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.31.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.31.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.31.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.31.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.31.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.32.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.32.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.32.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.32.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.32.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.32.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.32.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.32.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.32.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.32.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.32.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.32.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.32.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.32.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.32.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.32.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.32.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.32.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.33.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.33.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.33.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.33.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.33.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.33.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.33.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.33.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.33.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.33.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.33.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.33.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.33.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.33.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.33.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.33.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.33.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.33.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.34.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.34.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.34.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.34.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.34.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.34.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.34.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.34.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.34.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.34.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.34.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.34.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.34.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.34.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.34.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.34.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.34.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.34.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.35.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.35.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.35.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.35.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.35.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.35.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.35.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.35.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.35.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.35.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.35.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.35.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.35.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.35.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.35.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.35.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.35.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.35.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.36.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.36.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.36.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.36.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.36.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.36.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.36.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.36.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.36.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.36.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.36.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.36.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.36.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.36.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.36.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.36.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.36.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.36.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.37.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.37.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.37.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.37.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.37.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.37.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.37.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.37.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.37.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.37.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.37.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.37.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.37.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.37.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.37.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.37.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.37.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.37.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.38.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.38.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.38.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.38.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.38.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.38.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.38.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.38.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.38.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.38.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.38.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.38.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.38.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.38.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.38.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.38.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.38.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.38.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.39.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.39.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.39.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.39.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.39.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.39.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.39.attn.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.39.attn.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.39.attn.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.39.attn.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.39.attn.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.39.attn.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.39.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.39.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.39.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.39.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.39.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.2.1.39.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.3.0.norm.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.3.0.norm.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.3.0.norm.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.3.0.norm.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.3.0.norm.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.3.0.norm.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.3.1.0.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.3.1.0.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.3.1.0.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.3.1.0.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.3.1.0.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.3.1.0.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.3.1.0.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.3.1.0.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.3.1.0.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.3.1.0.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.3.1.0.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.3.1.0.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.3.1.1.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.3.1.1.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.3.1.1.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.3.1.1.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.3.1.1.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.3.1.1.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.3.1.1.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.3.1.1.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.3.1.1.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.3.1.1.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.3.1.1.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.3.1.1.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.3.1.2.norm1.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.3.1.2.norm1.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.3.1.2.norm1.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.3.1.2.norm1.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.3.1.2.norm1.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.3.1.2.norm1.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.3.1.2.norm2.weight:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.3.1.2.norm2.weight:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.3.1.2.norm2.weight:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.3.1.2.norm2.bias:lr=6e-05
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.3.1.2.norm2.bias:weight_decay=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- backbone.layers.3.1.2.norm2.bias:decay_mult=0.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.conv_seg.weight:lr=0.0006000000000000001
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.conv_seg.weight:weight_decay=0.01
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.conv_seg.weight:lr_mult=10.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.conv_seg.bias:lr=0.0006000000000000001
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.conv_seg.bias:weight_decay=0.01
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.conv_seg.bias:lr_mult=10.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.convs.0.conv.weight:lr=0.0006000000000000001
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.convs.0.conv.weight:weight_decay=0.01
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.convs.0.conv.weight:lr_mult=10.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.convs.0.bn.weight:lr=0.0006000000000000001
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.convs.0.bn.weight:weight_decay=0.01
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.convs.0.bn.weight:lr_mult=10.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.convs.0.bn.bias:lr=0.0006000000000000001
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.convs.0.bn.bias:weight_decay=0.01
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.convs.0.bn.bias:lr_mult=10.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.convs.1.conv.weight:lr=0.0006000000000000001
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.convs.1.conv.weight:weight_decay=0.01
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.convs.1.conv.weight:lr_mult=10.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.convs.1.bn.weight:lr=0.0006000000000000001
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.convs.1.bn.weight:weight_decay=0.01
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.convs.1.bn.weight:lr_mult=10.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.convs.1.bn.bias:lr=0.0006000000000000001
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.convs.1.bn.bias:weight_decay=0.01
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.convs.1.bn.bias:lr_mult=10.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.convs.2.conv.weight:lr=0.0006000000000000001
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.convs.2.conv.weight:weight_decay=0.01
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.convs.2.conv.weight:lr_mult=10.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.convs.2.bn.weight:lr=0.0006000000000000001
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.convs.2.bn.weight:weight_decay=0.01
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.convs.2.bn.weight:lr_mult=10.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.convs.2.bn.bias:lr=0.0006000000000000001
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.convs.2.bn.bias:weight_decay=0.01
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.convs.2.bn.bias:lr_mult=10.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.convs.3.conv.weight:lr=0.0006000000000000001
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.convs.3.conv.weight:weight_decay=0.01
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.convs.3.conv.weight:lr_mult=10.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.convs.3.bn.weight:lr=0.0006000000000000001
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.convs.3.bn.weight:weight_decay=0.01
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.convs.3.bn.weight:lr_mult=10.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.convs.3.bn.bias:lr=0.0006000000000000001
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.convs.3.bn.bias:weight_decay=0.01
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.convs.3.bn.bias:lr_mult=10.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.fusion_conv.conv.weight:lr=0.0006000000000000001
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.fusion_conv.conv.weight:weight_decay=0.01
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.fusion_conv.conv.weight:lr_mult=10.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.fusion_conv.bn.weight:lr=0.0006000000000000001
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.fusion_conv.bn.weight:weight_decay=0.01
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.fusion_conv.bn.weight:lr_mult=10.0
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.fusion_conv.bn.bias:lr=0.0006000000000000001
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.fusion_conv.bn.bias:weight_decay=0.01
+06/12 18:45:46 - mmengine - [97m[4mINFO[39m[24m - paramwise_options -- decode_head.fusion_conv.bn.bias:lr_mult=10.0
+06/12 18:45:46 - mmengine - [33m[4m[5mWARNING[39m[24m[25m - The prefix is not set in metric class IoUMetric.
+06/12 18:45:51 - mmengine - [97m[4mINFO[39m[24m - load model from: pretrain/mit_b5.pth
+06/12 18:45:51 - mmengine - [97m[4mINFO[39m[24m - Loads checkpoint by local backend from path: pretrain/mit_b5.pth
+06/12 18:45:51 - mmengine - [33m[4m[5mWARNING[39m[24m[25m - The model and loaded state dict do not match exactly
+unexpected key in source state_dict: decode_head.conv_seg.weight, decode_head.conv_seg.bias, decode_head.convs.0.conv.weight, decode_head.convs.0.bn.weight, decode_head.convs.0.bn.bias, decode_head.convs.0.bn.running_mean, decode_head.convs.0.bn.running_var, decode_head.convs.0.bn.num_batches_tracked, decode_head.convs.1.conv.weight, decode_head.convs.1.bn.weight, decode_head.convs.1.bn.bias, decode_head.convs.1.bn.running_mean, decode_head.convs.1.bn.running_var, decode_head.convs.1.bn.num_batches_tracked, decode_head.convs.2.conv.weight, decode_head.convs.2.bn.weight, decode_head.convs.2.bn.bias, decode_head.convs.2.bn.running_mean, decode_head.convs.2.bn.running_var, decode_head.convs.2.bn.num_batches_tracked, decode_head.convs.3.conv.weight, decode_head.convs.3.bn.weight, decode_head.convs.3.bn.bias, decode_head.convs.3.bn.running_mean, decode_head.convs.3.bn.running_var, decode_head.convs.3.bn.num_batches_tracked, decode_head.fusion_conv.conv.weight, decode_head.fusion_conv.bn.weight, decode_head.fusion_conv.bn.bias, decode_head.fusion_conv.bn.running_mean, decode_head.fusion_conv.bn.running_var, decode_head.fusion_conv.bn.num_batches_tracked
+06/12 18:45:52 - mmengine - [33m[4m[5mWARNING[39m[24m[25m - "FileClient" will be deprecated in future. Please use io functions in https://mmengine.readthedocs.io/en/latest/api/fileio.html#file-io
+06/12 18:45:52 - mmengine - [33m[4m[5mWARNING[39m[24m[25m - "HardDiskBackend" is the alias of "LocalBackend" and the former will be deprecated in future.
+06/12 18:45:52 - mmengine - [97m[4mINFO[39m[24m - Checkpoints will be saved to /ofo-share/repos-david/mmsegmentation_v2/work_dirs/segformer_mit-b5_8xb1-20k_safeforest_gascola_23_04_27_collect_04_compressed-1024x1024.

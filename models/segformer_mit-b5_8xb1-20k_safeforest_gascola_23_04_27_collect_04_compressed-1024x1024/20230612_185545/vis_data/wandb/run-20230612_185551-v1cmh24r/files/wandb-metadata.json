@@ -1,0 +1,207 @@
+{
+    "os": "Linux-5.15.0-73-generic-x86_64-with-glibc2.17",
+    "python": "3.8.16",
+    "heartbeatAt": "2023-06-12T18:55:51.848717",
+    "startedAt": "2023-06-12T18:55:51.469633",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "configs/segformer/segformer_mit-b5_8xb1-20k_safeforest_gascola_23_04_27_collect_04_compressed-1024x1024.py"
+    ],
+    "state": "running",
+    "program": "tools/train.py",
+    "codePath": "tools/train.py",
+    "git": {
+        "remote": "https://github.com/open-mmlab/mmsegmentation.git",
+        "commit": "e48d8d9bfcb73e4a1eb248a44f2f4bf493eb2537"
+    },
+    "email": "davidrussell327@gmail.com",
+    "root": "/ofo-share/repos-david/mmsegmentation_v2",
+    "host": "dev-07-derek-9-image-david",
+    "username": "exouser",
+    "executable": "/ofo-share/repos-david/conda/envs/openmmlab/bin/python",
+    "cpu_count": 32,
+    "cpu_count_logical": 32,
+    "cpu_freq": {
+        "current": 1996.2490000000016,
+        "min": 0.0,
+        "max": 0.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 1996.249,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1996.249,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1996.249,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1996.249,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1996.249,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1996.249,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1996.249,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1996.249,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1996.249,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1996.249,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1996.249,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1996.249,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1996.249,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1996.249,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1996.249,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1996.249,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1996.249,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1996.249,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1996.249,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1996.249,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1996.249,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1996.249,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1996.249,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1996.249,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1996.249,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1996.249,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1996.249,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1996.249,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1996.249,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1996.249,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1996.249,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 1996.249,
+            "min": 0.0,
+            "max": 0.0
+        }
+    ],
+    "disk": {
+        "total": 77.34953689575195,
+        "used": 68.49712753295898
+    },
+    "gpu": "GRID A100X-40C",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "GRID A100X-40C",
+            "memory_total": 42949672960
+        }
+    ],
+    "memory": {
+        "total": 122.84654998779297
+    }
+}
