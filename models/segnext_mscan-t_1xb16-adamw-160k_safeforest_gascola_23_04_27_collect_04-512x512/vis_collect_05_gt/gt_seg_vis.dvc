@@ -1,0 +1,5 @@
+outs:
+- md5: 0abfbbe779f52d6772ab480ebf484b1d.dir
+  size: 208387758
+  nfiles: 34
+  path: gt_seg_vis

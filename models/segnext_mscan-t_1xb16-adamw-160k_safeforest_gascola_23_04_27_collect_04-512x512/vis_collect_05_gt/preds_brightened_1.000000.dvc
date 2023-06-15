@@ -1,0 +1,5 @@
+outs:
+- md5: d201cc8f4d727cee107d24be34b5286f.dir
+  size: 139690489
+  nfiles: 32
+  path: preds_brightened_1.000000

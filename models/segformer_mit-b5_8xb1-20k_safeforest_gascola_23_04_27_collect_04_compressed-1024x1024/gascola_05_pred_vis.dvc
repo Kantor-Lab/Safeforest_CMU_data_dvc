@@ -1,0 +1,5 @@
+outs:
+- md5: 1b02a645c977e25892224c069121cf1e.dir
+  size: 132452423
+  nfiles: 96
+  path: gascola_05_pred_vis
