@@ -1,0 +1,5 @@
+outs:
+- md5: 4e38eeb1f581f0119be1c0e930c5b0a3.dir
+  size: 203235829
+  nfiles: 34
+  path: gt_seg_vis_condensed
