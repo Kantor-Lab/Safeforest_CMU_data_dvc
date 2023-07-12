@@ -1,0 +1,5 @@
+outs:
+- md5: 6cc32b576ce6113d5c1535f912699bfd.dir
+  size: 1323569280
+  nfiles: 33
+  path: vis_collect_05_preds
