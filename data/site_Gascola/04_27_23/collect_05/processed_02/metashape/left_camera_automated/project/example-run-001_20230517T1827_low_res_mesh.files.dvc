@@ -1,0 +1,5 @@
+outs:
+- md5: f719284bc1ac589e75440ca7496932a5.dir
+  size: 6743147930
+  nfiles: 286
+  path: example-run-001_20230517T1827_low_res_mesh.files

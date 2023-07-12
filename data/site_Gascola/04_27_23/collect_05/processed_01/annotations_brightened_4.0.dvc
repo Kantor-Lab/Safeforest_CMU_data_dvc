@@ -1,0 +1,5 @@
+outs:
+- md5: a503aa8e6200b1fd4505161c2c63b564.dir
+  size: 665124286
+  nfiles: 106
+  path: annotations_brightened_4.0
