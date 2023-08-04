@@ -1,4 +1,0 @@
-outs:
-- md5: 1c0c3c25d20e660d70ce63eb7f3d45c3
-  size: 15714144
-  path: point_cloud_slam.pcd

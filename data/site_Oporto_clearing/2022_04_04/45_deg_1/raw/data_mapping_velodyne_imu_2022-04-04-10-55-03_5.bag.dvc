@@ -1,5 +1,0 @@
-outs:
-- md5: 6a2f11b6e0a462f8c8e0e52f848341e2
-  size: 2097871708
-  path: data_mapping_velodyne_imu_2022-04-04-10-55-03_5.bag
-  isexec: true
