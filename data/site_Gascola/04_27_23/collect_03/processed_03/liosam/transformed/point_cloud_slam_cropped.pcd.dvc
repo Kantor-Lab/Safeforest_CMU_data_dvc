@@ -1,0 +1,4 @@
+outs:
+- md5: 794336d15f54a8d57ae36dfc9d634031
+  size: 4317440
+  path: point_cloud_slam_cropped.pcd

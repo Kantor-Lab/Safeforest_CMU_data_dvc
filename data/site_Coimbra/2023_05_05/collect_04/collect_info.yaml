@@ -1,0 +1,36 @@
+environment:
+  year: 2023 # YYYY
+  month: 05 # MM
+  day: 05 # DD
+  gps_location: # lat(deg), long(deg), elev(m)/optional
+  location_description: "bus stop forest" # Can be a short tag or description
+  lighting_conditions: # sunny, overcast, variable, low-angle
+  local_time: # HH:MM
+  wind_speed: # M/S
+flight_plan:
+  above_canopy: true # bool
+  autonomous_survey: true # bool
+  flight_speed: 3.5 # M/S
+  target_altitude: 40 # M above ground
+general:
+  notes: # Freeform notes
+  objective: # Goal of the flight
+  people_present: "Babak, Duda" # List of names
+payload:
+  camera_exposure: 300 # camera exposure in ms
+  camera_focus: # The camera focus distance (m)
+  camera_aperture: # f-stop value
+  missing_sensors_topics: ["/fix"] # A list of ros topic names which didn't show up at all
+  missing_sensors_description: # A freeform description of missing topics
+  faulty_sensor_topics: # A list of ros topic names for topics which were faulty. Either dropped mid way or were degraded
+  faulty_sensors_description: # A freeform description of faulty topic
+  inclination_angle: 30 # Inclination in degrees from horizontal
+  quality: 9 # Qualitative assessment from 1-10, capturing all elements of the collect
+  working_sensor_topics: # A list of working sensor topics
+  working_sensors_description: "Looks really good" # A freeform description of working sensor topics
+  camera_synced: # bool, were the cameras used synchronously or free-run
+time:
+  at_survey_altitude: # What unix time did the platform get to survey altitude
+  finished_survey_altitude: # What unix time did the platform leave survey altitude
+  land: # What unix time to the platform takeoff
+  takeoff: # What unix time did the platform land

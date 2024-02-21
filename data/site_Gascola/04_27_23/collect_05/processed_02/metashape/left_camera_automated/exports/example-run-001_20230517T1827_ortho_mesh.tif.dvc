@@ -1,0 +1,4 @@
+outs:
+- md5: 4d149f58fad61c65484a82f65dd94a46
+  size: 1344819728
+  path: example-run-001_20230517T1827_ortho_mesh.tif

@@ -1,0 +1,4 @@
+outs:
+- md5: b9b2f8deecd2525f3c7ad42d75a45aa4
+  size: 274559043
+  path: map_1500_to_2500_with_intensity.pcd

@@ -1,0 +1,4 @@
+outs:
+- md5: 03a20428dbdee7b79b184cfe25cee53f
+  size: 29218949
+  path: example-run-001_20230517T1827_low_res_local.ply
