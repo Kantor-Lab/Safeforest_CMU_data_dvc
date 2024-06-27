@@ -1,0 +1,23 @@
+environment:
+  year: 2024 # YYYY
+  month: 05 # MM
+  day: 03 # DD
+  gps_location: # lat(deg), long(deg), elev(m)/optional
+  location_description: "cmu campus" # Can be a short tag or description
+  lighting_conditions: sunny # sunny, overcast, variable, low-angle
+  local_time: # HH:MM
+  wind_speed: # M/S
+general:
+  notes: # Freeform notes
+  objective: # Goal of the flight
+  people_present: "Duda" # List of names
+payload:
+  missing_sensors_topics: ["/fix"] # A list of ros topic names which didn't show up at all
+  missing_sensors_description: # A freeform description of missing topics
+  faulty_sensor_topics: # A list of ros topic names for topics which were faulty. Either dropped mid way or were degraded
+  faulty_sensors_description: # A freeform description of faulty topic
+  inclination_angle: 15 # Inclination in degrees from horizontal
+  quality: 8 # Qualitative assessment from 1-10, capturing all elements of the collect
+  working_sensor_topics: # A list of working sensor topics
+  working_sensors_description: "Looks really good" # A freeform description of working sensor topics
+  camera_synced: # bool, were the cameras used synchronously or free-run
